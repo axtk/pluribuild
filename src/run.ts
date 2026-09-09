@@ -4,9 +4,10 @@ import type { BuildOptions } from "./BuildOptions.ts";
 import { build } from "./build.ts";
 
 let args = new Args();
+let dev = args.hasKey("--dev");
 
 let options: BuildOptions = {
-  dev: args.hasKey("--dev"),
+  dev,
   minify: !args.isExplicitlyOff("--minify"),
 };
 
@@ -17,4 +18,7 @@ for (let [k, v] of Object.entries(options)) {
   if (v === undefined) delete options[k as keyof BuildOptions];
 }
 
-build(options);
+build(options).then(() => {
+  if (dev) console.log("Initial build complete");
+  else console.log("Build complete");
+});
