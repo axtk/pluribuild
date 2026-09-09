@@ -36,6 +36,5 @@ export async function build({
     let ctx = await esbuild.context(buildOptions);
     await ctx.watch();
   }
-
-  await esbuild.build(buildOptions);
+  else await esbuild.build(buildOptions);
 }
