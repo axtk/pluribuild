@@ -1,0 +1,35 @@
+{
+  "name": "pluribuild",
+  "version": "0.1.0",
+  "description": "Build multiple entry points into multiple output files with a single command",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "compile-bin": "esbuild src/run.ts --bundle --outfile=dist/run.mjs --platform=node --format=esm --external:esbuild",
+    "preversion": "npx npm-run-all shape compile-bin",
+    "shape": "npx codeshape",
+    "typecheck": "npx codeshape typecheck"
+  },
+  "bin": {
+    "pluribuild": "./dist/run.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axtk/pluribuild.git"
+  },
+  "keywords": [
+    "build",
+    "entry points"
+  ],
+  "author": "axtk",
+  "license": "MIT",
+  "dependencies": {
+    "args-json": "^1.4.3",
+    "esbuild": "^0.28.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2"
+  }
+}
