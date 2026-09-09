@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Args, isKey } from "args-json";
+import type { BuildOptions } from "./BuildOptions.ts";
 import { build } from "./build.ts";
-import { BuildOptions } from "./BuildOptions.ts";
 
 let args = new Args();
 

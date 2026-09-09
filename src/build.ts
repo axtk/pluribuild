@@ -1,8 +1,13 @@
 import esbuild, { type BuildOptions as EsbuildOptions } from "esbuild";
-import { BuildOptions } from "./BuildOptions.ts";
+import type { BuildOptions } from "./BuildOptions.ts";
 import { getDefaultEntryPoints } from "./getDefaultEntryPoints.ts";
 
-export async function build({ entryPoints, dev, dir, ...options }: BuildOptions = {}) {
+export async function build({
+  entryPoints,
+  dev,
+  dir,
+  ...options
+}: BuildOptions = {}) {
   let e = entryPoints ?? getDefaultEntryPoints(dir);
 
   if (Object.keys(e).length === 0) {
