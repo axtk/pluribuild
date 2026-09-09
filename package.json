@@ -1,6 +1,6 @@
 {
   "name": "pluribuild",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build multiple entry points into multiple output files with a single command",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
