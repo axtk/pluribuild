@@ -17,9 +17,7 @@ export function getDefaultEntryPoints(dir: string, ignore?: string[]) {
     // entries/x/y.ts -> dist/x/y.js
     ...globSync(`${dir}/[!_]*/[!_]*.{ts,tsx}`, {
       exclude: ignore?.map((subdir) => `${dir}/${subdir}/[!_]*.{ts,tsx}`),
-    }).map(
-      toEntryPoint((path) => path.split(sep).slice(-2).join("/")),
-    ),
+    }).map(toEntryPoint((path) => path.split(sep).slice(-2).join("/"))),
   ]);
 
   return Array.from(entryPoints.values());
