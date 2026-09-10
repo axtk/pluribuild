@@ -1,6 +1,6 @@
 # pluribuild
 
-Build multiple entry points into multiple output files with a single command.
+Build multiple entry points into multiple output files with a single command and esbuild under the hood.
 
 ## CLI
 
