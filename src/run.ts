@@ -9,6 +9,7 @@ let dev = args.hasKey("--dev");
 let options: BuildOptions = {
   dev,
   minify: !args.isExplicitlyOff("--minify"),
+  ignore: args.getValues("--ignore"),
 };
 
 let rawArgs = process.argv.slice(2);

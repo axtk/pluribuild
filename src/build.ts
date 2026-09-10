@@ -5,10 +5,11 @@ import { getDefaultEntryPoints } from "./getDefaultEntryPoints.ts";
 export async function build({
   entryPoints,
   dev,
-  dir,
+  dir = "entries",
+  ignore,
   ...options
 }: BuildOptions = {}) {
-  let e = entryPoints ?? getDefaultEntryPoints(dir);
+  let e = entryPoints ?? getDefaultEntryPoints(dir, ignore);
 
   if (Object.keys(e).length === 0) {
     console.warn("No entry points");

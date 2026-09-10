@@ -6,7 +6,7 @@ Run `npx pluribuild` to build:
 - `entries/<name>/src/index.ts(x)` into `dist/<name>/index.js`;
 - `entries/<name>/x.ts(x)` into `dist/<name>/x.js` (`index` as `x` is fine, too).
 
-Subdirectories of `entries` and entry point files whose names start with an underscore are ignored.
+Subdirectories of `entries` and entry point files whose names start with an underscore are ignored. Add `--ignore <subdir1> [<subdir2> ...]` to the command to additionally ignore the specified subdirectories of `entries`.
 
 Run `npx pluribuild <dir>` to point to a parent directory other than `entries`.
 
